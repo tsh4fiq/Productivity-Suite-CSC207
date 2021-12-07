@@ -1,3 +1,4 @@
+import events.CalendarEvent;
 import org.junit.*;
 
 import static org.junit.Assert.*;

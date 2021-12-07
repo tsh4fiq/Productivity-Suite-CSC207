@@ -1,4 +1,8 @@
+import calendar.CalendarManager;
+import events.CalendarEvent;
+import events.OneOffEvent;
 import org.junit.*;
+import users.students.Student;
 
 import java.util.ArrayList;
 
