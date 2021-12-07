@@ -1,3 +1,12 @@
+import calendar.Calendar;
+import calendar.CalendarManager;
+import calendar.FreeTimeCalculator;
+import events.CalendarEvent;
+import events.OneOffEvent;
+import users.groups.GroupManager;
+import users.students.Student;
+import users.students.StudentManager;
+
 import java.util.ArrayList;
 
 class FreeTimeCalculatorTest {
