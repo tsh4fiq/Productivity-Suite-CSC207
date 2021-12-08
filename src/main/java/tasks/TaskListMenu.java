@@ -64,6 +64,9 @@ public class TaskListMenu implements GUI {
             JButton button = new JButton();
             String exString = ex.toString();
             button.setText(exString);
+            if (ex.isClosed()) {
+                button.setForeground(Color.red);
+            }
             button.addActionListener(this);
 
             this.mappings.put(button, ex);
