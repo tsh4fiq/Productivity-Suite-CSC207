@@ -56,6 +56,7 @@ public class StudentManager {
         this.students.get(user).getTaskList().closeTask(task);
     }
 
+    public boolean isClosedTask(String user, Task task){return this.students.get(user).getTaskList().isClosedTask(task);}
 
 
 

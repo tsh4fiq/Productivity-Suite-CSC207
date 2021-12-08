@@ -32,6 +32,13 @@ public class TaskList implements Serializable {
         task.editEndDT(LocalDateTime.now());
     }
 
+    public boolean isClosedTask(Task task){
+        if(this.tasks.contains(task)){
+            return task.isClosed();
+        }
+        return false;
+    }
+
     public int getNumTasks() {
         return this.tasks.size();
     }

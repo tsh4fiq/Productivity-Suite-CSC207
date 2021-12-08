@@ -70,5 +70,8 @@ public class StudentController {
     public void closeTask(String user, Task task) {
         this.studentManager.closeTask(user, task);;
     }
+    public boolean isClosedTask(String user, Task task){
+        return this.studentManager.isClosedTask(user, task);
+    }
 
 }

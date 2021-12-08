@@ -52,9 +52,15 @@ public class ViewTask implements GUI {
         this.removeTask.addActionListener(this);
         this.frame.add(removeTask);
 
-        this.closeTask = new JButton("Task is DONE");
-        this.closeTask.addActionListener(this);
-        this.frame.add(closeTask);
+        if(this.studentController.isClosedTask(this.studentUsername, this.task)){
+            this.closeTask = new JButton("Task is already DONE");
+            this.frame.add(closeTask);
+        }else{
+            this.closeTask = new JButton("Mark task as DONE");
+            this.closeTask.addActionListener(this);
+            this.frame.add(closeTask);
+        }
+
 
         this.back = new JButton("Return to Your TODO List");
         this.back.addActionListener(this);
