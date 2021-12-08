@@ -1,11 +1,9 @@
 package frontend;
 
+import backend.JsonWriter;
 import calendar.CalendarController;
 import calendar.CalendarFrame;
-import events.CalendarEvent;
-import events.OneOffEvent;
-import events.OneOffMenu;
-import events.RecurringMenu;
+import events.*;
 import login.LogIn;
 
 import net.fortuna.ical4j.data.CalendarBuilder;
@@ -18,19 +16,16 @@ import net.fortuna.ical4j.model.component.VEvent;
 import net.fortuna.ical4j.model.property.DtEnd;
 import net.fortuna.ical4j.model.property.DtStart;
 import net.fortuna.ical4j.model.property.RRule;
-import net.fortuna.ical4j.model.property.RecurrenceId;
+import tasks.TaskListMenu;
 import users.groups.GroupController;
 import users.groups.GroupMenu;
 import users.students.StudentController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -47,6 +42,8 @@ public class MainMenu implements GUI {
     private JButton groupsButton;
     private JButton viewCalendarButton;
     private JButton returnButton;
+    private JButton todoButton;
+    
     private LogIn loginController;
     private GroupController groupController;
     private String studentUsername;
@@ -92,14 +89,18 @@ public class MainMenu implements GUI {
         this.viewCalendarButton = new JButton("View Your Calendar");
         this.returnButton = new JButton("Logout");
         this.uploadFile = new JButton("Upload Ical File");
+        this.todoButton = new JButton("Your TODO List");
 
 
-        this.addRecurButton.setBounds(50, 150, 170, 40);
-        this.addOneOffButton.setBounds(250, 150, 170, 40);
-        this.groupsButton.setBounds(50, 300, 170, 40);
-        this.viewCalendarButton.setBounds(250, 300, 170, 40);
+        this.addRecurButton.setBounds(50, 110, 170, 40);
+        this.groupsButton.setBounds(50, 220, 170, 40);
+        this.addOneOffButton.setBounds(250, 110, 170, 40);
+        this.viewCalendarButton.setBounds(250, 220, 170, 40);
         this.returnButton.setBounds(0, 0, 100, 20);
-        this.uploadFile.setBounds(150, 50, 170, 40);
+
+        this.uploadFile.setBounds(50, 330, 170, 40);
+        this.todoButton.setBounds(250, 330,170,40);
+        
 
 
         this.addRecurButton.addActionListener(this);
@@ -108,6 +109,7 @@ public class MainMenu implements GUI {
         this.viewCalendarButton.addActionListener(this);
         this.returnButton.addActionListener(this);
         this.uploadFile.addActionListener(this);
+        this.todoButton.addActionListener(this);
 
         this.frame.add(addRecurButton);
         this.frame.add(addOneOffButton);
@@ -115,6 +117,7 @@ public class MainMenu implements GUI {
         this.frame.add(viewCalendarButton);
         this.frame.add(returnButton);
         this.frame.add(uploadFile);
+        this.frame.add(todoButton);
 
     }
 
@@ -156,6 +159,8 @@ public class MainMenu implements GUI {
                     this.calendarController, this.studentController, this.studentUsername, realMonth, realYear);
 
         } else if (e.getSource() == this.returnButton) {
+            JsonWriter jsonWriter = new JsonWriter();
+            jsonWriter.saveData(this.studentController, this.groupController);
             this.frame.dispose();
             StartMenu startMenu = new StartMenu(this.loginController, this.groupController,
                     this.calendarController, this.studentController);
@@ -176,6 +181,11 @@ public class MainMenu implements GUI {
                 }
                 JOptionPane.showMessageDialog(null, "File Succesfully Uploaded");
             }
+
+        }else if (e.getSource() == this.todoButton){
+            this.frame.dispose();
+            new TaskListMenu(this.loginController, this.groupController,
+                    this.calendarController, this.studentController, this.studentUsername);
         }
     }
 

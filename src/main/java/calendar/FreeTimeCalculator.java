@@ -1,7 +1,7 @@
 package calendar;
 
 import events.CalendarEvent;
-import events.EventCreator;
+import events.EventFactory;
 import events.OneOffEvent;
 import users.groups.Group;
 import users.groups.GroupManager;
@@ -110,7 +110,7 @@ public class FreeTimeCalculator {
      */
     private ArrayList<CalendarEvent> getDayFreeTime(String day, List<CalendarEvent> daySchedule) {
         ArrayList<CalendarEvent> dayFreeTime= new ArrayList<CalendarEvent>();
-        EventCreator eventC = new EventCreator();
+        EventFactory eventC = new EventFactory();
         dayFreeTime.add(eventC.createEvent("Free", 0, (float) 23.59, day));
 
         for (CalendarEvent event: daySchedule){
@@ -127,7 +127,7 @@ public class FreeTimeCalculator {
 
     private ArrayList<OneOffEvent> getDateFreeTime(Float date, List<OneOffEvent> dateSchedule) {
         ArrayList<OneOffEvent> dateFreeTime= new ArrayList<OneOffEvent>();
-        EventCreator eventC = new EventCreator();
+        EventFactory eventC = new EventFactory();
         dateFreeTime.add(eventC.createEvent("Free", 0, (float) 23.59, date));
 
         for (OneOffEvent event: dateSchedule){
@@ -148,7 +148,7 @@ public class FreeTimeCalculator {
                                                       float endTime, List<OneOffEvent> toRemove, Float date) {
         List<OneOffEvent> toAdd = new ArrayList<>();
         for (int i = 0; i < dateFreeTime.size(); i++) {
-            EventCreator eventC = new EventCreator();
+            EventFactory eventC = new EventFactory();
             OneOffEvent eventToCheck = dateFreeTime.get(i);
             float startFree = eventToCheck.getStartTime();
             float endFree = eventToCheck.getEndTime();
@@ -213,7 +213,7 @@ public class FreeTimeCalculator {
                                                            float startTime, float endTime, List<CalendarEvent> toRemove, String day) {
         List<CalendarEvent> toAdd = new ArrayList<>();
         for (int i = 0; i < dayFreeTime.size(); i++) {
-            EventCreator eventC = new EventCreator();
+            EventFactory eventC = new EventFactory();
             CalendarEvent eventToCheck = dayFreeTime.get(i);
             float startFree = eventToCheck.getStartTime();
             float endFree = eventToCheck.getEndTime();

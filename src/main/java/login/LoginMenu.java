@@ -19,6 +19,7 @@ public class LoginMenu implements GUI {
     private JFrame frame;
     private JButton cancelButton;
     private JButton loginButton;
+
     private String username;
     private String password;
     private LogIn loginController;

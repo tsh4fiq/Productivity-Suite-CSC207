@@ -1,3 +1,4 @@
+import events.CalendarEvent;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -13,6 +14,11 @@ public class CalendarEventTest {
     @Test(timeout = 50)
     public void TestGetDay() {
         assertEquals("Tuesday", event.getDayOrDate());
+    }
+
+    @Test(timeout = 50)
+    public void TestGetName() {
+        assertEquals("Lecture", event.getName());
     }
 
     @Test(timeout = 50)
@@ -36,9 +42,19 @@ public class CalendarEventTest {
     }
 
     @Test(timeout = 50)
-    public void TestName() {
+    public void TestSetName() {
+        assertEquals("Lecture", event.getName());
         event.setName("Sleep");
         assertEquals("Sleep", event.getName());
     }
+
+    @Test(timeout = 50)
+    public void TestSetDayorDate() {
+        assertEquals("Tuesday", event.getDayOrDate());
+        event.setDayOrDate("Monday");
+        assertEquals("Monday", event.getDayOrDate());
+    }
+
+
 
 }

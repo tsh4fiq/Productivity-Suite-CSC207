@@ -9,7 +9,6 @@ import users.students.StudentController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,6 +20,7 @@ public class CreateGroup implements GUI {
     private JTextField groupName;
     private JButton submitButton;
     private JButton cancelButton;
+
     private LogIn loginController;
     private GroupController groupController;
     private CalendarController calendarController;

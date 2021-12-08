@@ -1,4 +1,8 @@
 import org.junit.*;
+import users.Person;
+import users.groups.Group;
+import users.groups.GroupManager;
+import users.students.Student;
 
 import java.util.ArrayList;
 
@@ -11,7 +15,7 @@ public class GroupManagerTest {
     @Before
     public void setUp() {
         m = new GroupManager();
-        ArrayList<Student> students = new ArrayList<Student>();
+        ArrayList<Person> students = new ArrayList<Person>();
         g = m.CreateGroup(students, "G1");
     }
 

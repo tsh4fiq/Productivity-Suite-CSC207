@@ -1,3 +1,6 @@
+import calendar.Calendar;
+import events.CalendarEvent;
+import events.OneOffEvent;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -39,5 +42,6 @@ public class CalendarTest {
         c.removeSingleEvent(6.21f, newSingle);
         assertEquals(0, c.getSingle().get(6.21f).size());
     }
+
 
 }

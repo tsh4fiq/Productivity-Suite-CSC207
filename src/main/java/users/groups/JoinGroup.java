@@ -9,7 +9,6 @@ import users.students.StudentController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /** CreateGroup window is made to join an existing group.*/
 

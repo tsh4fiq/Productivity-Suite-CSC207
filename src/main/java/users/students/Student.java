@@ -5,14 +5,15 @@ import java.time.temporal.ChronoUnit;
 import java.io.Serializable;
 
 import calendar.Calendar;
-import backend.Task;
-import backend.TaskList;
+import tasks.Task;
+import tasks.TaskList;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import users.Person;
+import users.StudentBuilderInterface;
 
 
-public class Student implements Person, Serializable {
+public class Student implements Person, Serializable, StudentBuilderInterface {
 
     private String username;
     private String password;
@@ -21,48 +22,34 @@ public class Student implements Person, Serializable {
 
 
     public Student() {
-        this.schedule = new Calendar();
-        this.tasks = new TaskList();
-
+        setEmptySchedule();
+        setTaskList();
     }
 
     @JsonCreator
     public Student(@JsonProperty("username") String userName, @JsonProperty("password") String password) {
-        this.username = userName;
-        this.password = password;
-        this.schedule = new Calendar();
-        this.tasks = new TaskList();
-
+        setUsername(userName);
+        setPassword(password);
+        setEmptySchedule();
+        setTaskList();
     }
 
     public Student(String userName, String password, Calendar schedule) {
-        this.username = userName;
-        this.password = password;
-        this.schedule = schedule;
+        setUsername(userName);
+        setPassword(password);
+        setPopulatedSchedule(schedule);
     }
 
     public String getUsername() {
         return this.username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return this.password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Calendar getStudentSchedule() {
         return this.schedule;
-    }
-
-    public void setStudentSchedule(Calendar schedule) {
-        this.schedule = schedule;
     }
 
     @Override
@@ -123,5 +110,30 @@ public class Student implements Person, Serializable {
         float totalTimeMinutes = this.totalMinutesCloseTasks();
         float avgMinutes = totalTimeMinutes / this.NumTasks();
         return avgMinutes / 60;
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public void setEmptySchedule() {
+        this.schedule = new Calendar();
+    }
+
+    @Override
+    public void setPopulatedSchedule(Calendar calendar) {
+        this.schedule = calendar;
+    }
+
+    @Override
+    public void setTaskList() {
+        this.tasks = new TaskList();
     }
 }

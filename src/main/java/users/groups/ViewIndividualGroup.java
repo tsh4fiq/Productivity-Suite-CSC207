@@ -11,7 +11,6 @@ import users.students.StudentController;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -26,6 +25,7 @@ public class ViewIndividualGroup implements GUI {
     private CalendarController calendarController;
     private StudentController studentController;
     private String studentUsername;
+
     private String gID;
     private JButton back;
     private JFrame frame;

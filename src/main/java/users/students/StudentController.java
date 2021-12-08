@@ -1,5 +1,6 @@
 package users.students;
 
+import tasks.Task;
 import events.CalendarEvent;
 import events.OneOffEvent;
 
@@ -50,9 +51,27 @@ public class StudentController {
     public  ArrayList<ArrayList<Object>> getTimes(String username, Float date, String day) {
 
         return studentManager.getTimes(username, date, day);
-
-
     }
 
+
+
+    public ArrayList<Task> getTasks(String user){
+        return this.studentManager.getTasks(user);
+    }
+
+    public void addTask(String user, String title) {
+        this.studentManager.addTask(user, title);
+    }
+
+    public void removeTask(String user, Task task) {
+        this.studentManager.removeTask(user, task);
+    }
+
+    public void closeTask(String user, Task task) {
+        this.studentManager.closeTask(user, task);;
+    }
+    public boolean isClosedTask(String user, Task task){
+        return this.studentManager.isClosedTask(user, task);
+    }
 
 }

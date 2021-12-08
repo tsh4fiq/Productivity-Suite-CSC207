@@ -1,3 +1,14 @@
+import calendar.Calendar;
+import calendar.CalendarManager;
+import calendar.FreeTimeCalculator;
+import events.CalendarEvent;
+import events.EventFactory;
+import events.OneOffEvent;
+import users.Person;
+import users.groups.GroupManager;
+import users.students.Student;
+import users.students.StudentManager;
+
 import java.util.ArrayList;
 
 class FreeTimeCalculatorTest {
@@ -8,7 +19,7 @@ class FreeTimeCalculatorTest {
     void setUp() {
         StudentManager studentManager = new StudentManager();
         GroupManager groupManager = new GroupManager();
-        EventCreator eventCreator =  new EventCreator();
+        EventFactory eventCreator =  new EventFactory();
         CalendarManager calendarManager = new CalendarManager();
 
         setUpGroup(studentManager, groupManager, eventCreator, calendarManager);
@@ -22,8 +33,8 @@ class FreeTimeCalculatorTest {
     }
 
     private void setUpGroup(StudentManager studentManager, GroupManager groupManager,
-                            EventCreator eventCreator, CalendarManager calendarManager) {
-        ArrayList<Student> students= new ArrayList<>();
+                            EventFactory eventCreator, CalendarManager calendarManager) {
+        ArrayList<Person> students= new ArrayList<>();
         Student tim = new Student("tim", "123");
         Student tom = new Student("tom", "234");
         Student tam = new Student("tam", "345");
@@ -57,7 +68,7 @@ class FreeTimeCalculatorTest {
         groupManager.CreateGroup(students, "222");
     }
 
-    private ArrayList<CalendarEvent> eventsTem(EventCreator eventCreator) {
+    private ArrayList<CalendarEvent> eventsTem(EventFactory eventCreator) {
         ArrayList<CalendarEvent> eventsTem = new ArrayList();
         eventsTem.add(eventCreator.createEvent("207", 8.00f, 11.00f, "Thursday"));
         eventsTem.add(eventCreator.createEvent("207", 8.00f, 10.00f, "Wednesday"));
@@ -65,7 +76,7 @@ class FreeTimeCalculatorTest {
         return eventsTem;
     }
 
-    private ArrayList<OneOffEvent> eventsTemOneOff(EventCreator eventCreator) {
+    private ArrayList<OneOffEvent> eventsTemOneOff(EventFactory eventCreator) {
         ArrayList<OneOffEvent> eventsTem = new ArrayList();
         eventsTem.add(eventCreator.createEvent("go out", 8.00f, 11.00f, (float) 1.07));
         eventsTem.add(eventCreator.createEvent("go out", 8.00f, 10.00f, (float) 2.07));
@@ -73,7 +84,7 @@ class FreeTimeCalculatorTest {
         return eventsTem;
     }
 
-    private ArrayList<CalendarEvent> eventsTam(EventCreator eventCreator) {
+    private ArrayList<CalendarEvent> eventsTam(EventFactory eventCreator) {
         ArrayList<CalendarEvent> eventsTam = new ArrayList();
         eventsTam.add(eventCreator.createEvent("207", 13.00f, 14.00f, "Tuesday"));
         eventsTam.add(eventCreator.createEvent("207", 10.00f, 12.00f, "Wednesday"));
@@ -81,7 +92,7 @@ class FreeTimeCalculatorTest {
         return eventsTam;
     }
 
-    private ArrayList<OneOffEvent> eventsTamOneOff(EventCreator eventCreator) {
+    private ArrayList<OneOffEvent> eventsTamOneOff(EventFactory eventCreator) {
         ArrayList<OneOffEvent> eventsTam = new ArrayList();
         eventsTam.add(eventCreator.createEvent("go out", 13.00f, 14.00f, (float) 4.07));
         eventsTam.add(eventCreator.createEvent("go out", 10.00f, 12.00f, (float) 5.07));
@@ -89,7 +100,7 @@ class FreeTimeCalculatorTest {
         return eventsTam;
     }
 
-    private ArrayList<CalendarEvent> eventsTom(EventCreator eventCreator) {
+    private ArrayList<CalendarEvent> eventsTom(EventFactory eventCreator) {
         ArrayList<CalendarEvent> eventsTom = new ArrayList();
         eventsTom.add(eventCreator.createEvent("207", 10.00f, 12.00f, "Tuesday"));
         eventsTom.add(eventCreator.createEvent("207", 10.00f, 12.00f, "Thursday"));
@@ -97,7 +108,7 @@ class FreeTimeCalculatorTest {
         return eventsTom;
     }
 
-    private ArrayList<OneOffEvent> eventsTomOneOff(EventCreator eventCreator) {
+    private ArrayList<OneOffEvent> eventsTomOneOff(EventFactory eventCreator) {
         ArrayList<OneOffEvent> eventsTom = new ArrayList();
         eventsTom.add(eventCreator.createEvent("go out", 10.00f, 12.00f, (float) 1.07));
         eventsTom.add(eventCreator.createEvent("go out", 10.00f, 12.00f, (float) 2.07));
@@ -105,7 +116,7 @@ class FreeTimeCalculatorTest {
         return eventsTom;
     }
 
-    private ArrayList<CalendarEvent> eventsTim(EventCreator eventCreator) {
+    private ArrayList<CalendarEvent> eventsTim(EventFactory eventCreator) {
         ArrayList<CalendarEvent> eventsTim = new ArrayList();
         eventsTim.add(eventCreator.createEvent("207", 8.00f, 10.00f, "Monday"));
         eventsTim.add(eventCreator.createEvent("207", 8.00f, 10.00f, "Wednesday"));
@@ -113,7 +124,7 @@ class FreeTimeCalculatorTest {
         return eventsTim;
     }
 
-    private ArrayList<OneOffEvent> eventsTimOneOff(EventCreator eventCreator) {
+    private ArrayList<OneOffEvent> eventsTimOneOff(EventFactory eventCreator) {
         ArrayList<OneOffEvent> eventsTim = new ArrayList();
         eventsTim.add(eventCreator.createEvent("go out", 8.00f, 10.00f, (float) 4.07));
         eventsTim.add(eventCreator.createEvent("go out", 8.00f, 10.00f, (float) 5.07));

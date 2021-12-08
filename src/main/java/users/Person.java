@@ -1,7 +1,7 @@
 package users;
 
-import backend.Task;
-import backend.TaskList;
+import tasks.Task;
+import tasks.TaskList;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.util.ArrayList;
