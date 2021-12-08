@@ -16,7 +16,7 @@ public class GroupManagerTest {
     public void setUp() {
         m = new GroupManager();
         ArrayList<Person> students = new ArrayList<Person>();
-        g = m.CreateGroup(students, "G1");
+        g = m.createGroup(students, "G1");
     }
 
     @Test(timeout = 50)
