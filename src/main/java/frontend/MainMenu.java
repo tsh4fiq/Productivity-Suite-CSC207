@@ -3,6 +3,7 @@ package frontend;
 import backend.JsonWriter;
 import calendar.CalendarController;
 import calendar.CalendarFrame;
+import constants.VarExceptions;
 import events.*;
 import login.LogIn;
 
@@ -178,6 +179,8 @@ public class MainMenu implements GUI {
                     ex.printStackTrace();
                 } catch (ParserException ex) {
                     ex.printStackTrace();
+                } catch (VarExceptions varExceptions) {
+                    varExceptions.printStackTrace();
                 }
                 JOptionPane.showMessageDialog(null, "File Succesfully Uploaded");
             }
@@ -190,7 +193,7 @@ public class MainMenu implements GUI {
     }
 
 
-    public void useFile(File file) throws IOException, ParserException {
+    public void useFile(File file) throws IOException, ParserException, VarExceptions {
 
 
         FileInputStream fin = new FileInputStream(file);

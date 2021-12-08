@@ -1,6 +1,7 @@
 package events;
 
 import calendar.CalendarController;
+import constants.VarExceptions;
 import frontend.MainMenu;
 import login.LogIn;
 import users.groups.GroupController;
@@ -182,7 +183,11 @@ public class OneOffMenu implements GUIEventMenu {
             ArrayList<OneOffEvent> events = new ArrayList();
             events.add(this.calendarController.createOneOffEvent(this.eventName, this.startHour + (this.startMinute / 100),
                     this.endHour + (this.endMinute/100), this.dateMonth + (this.dateDay/100)));
-            this.calendarController.addOneOffEvent(this.studentUsername, events);
+            try {
+                this.calendarController.addOneOffEvent(this.studentUsername, events);
+            } catch (VarExceptions ex) {
+                ex.printStackTrace();
+            }
 
         }
 
