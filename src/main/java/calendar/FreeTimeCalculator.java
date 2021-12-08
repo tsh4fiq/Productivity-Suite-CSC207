@@ -24,6 +24,8 @@ public class FreeTimeCalculator {
         return calculateFreeTime(aggregateRoutine, aggregateOneOff);
     }
 
+
+
     /**
      * Calculates the free-times of a given aggregateRoutine and returns the Calendar for the free-times
      * @param aggregateRoutine

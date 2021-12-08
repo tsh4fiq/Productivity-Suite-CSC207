@@ -21,7 +21,7 @@ public class GroupManager {
 
     }
 
-    public ArrayList<String> getStudentUsername(String gID) {
+    public ArrayList<String> getStudentUsername( String gID) {
 
         Group curr = this.groupMap.get(gID);
         return curr.getStudentsUsername();
@@ -31,7 +31,7 @@ public class GroupManager {
     }
 
 
-    public Group createGroup(ArrayList<Person> groupMembers, String groupName) {
+    public Group CreateGroup(ArrayList<Person> groupMembers, String groupName) {
 
         Group newGroup = new Group(groupName);
         newGroup.setStudentsInGroup(groupMembers);

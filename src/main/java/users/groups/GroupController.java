@@ -19,7 +19,7 @@ public class GroupController {
 
 
     public Group createGroup(ArrayList<Person> groupMembers, String groupName){
-         return (this.manager).createGroup(groupMembers, groupName);
+         return (this.manager).CreateGroup(groupMembers, groupName);
     }
 
 
