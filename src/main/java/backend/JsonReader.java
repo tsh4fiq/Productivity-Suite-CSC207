@@ -45,30 +45,6 @@ public class JsonReader implements LoadData {
 
     }
 
-//    public Group[] readGroupJson() throws IOException {
-//
-//        String grpfilePath = this.groupJsonLoc;
-//
-//        ObjectMapper mapper = new ObjectMapper();
-//        mapper.registerSubtypes(new NamedType(Student.class, "Student"));
-//        mapper.registerSubtypes(new NamedType(Group.class, "Group"));
-//        mapper.findAndRegisterModules();
-//        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//
-//        Reader grpreader = new FileReader(grpfilePath);
-//
-//        List<Group> groups = Arrays.asList(mapper.readValue(grpreader, Group[].class));
-//        grpreader.close();
-//        Group[] groupArray = new Group[groups.size()];
-//        for (int i = 0; i < groups.size(); i++) {
-//            groupArray[i] = groups.get(i);
-//        }
-//
-//
-//        return groupArray;
-//
-//    }
-
     public HashMap<String, ArrayList<String>> readStudentGroupJson() throws IOException {
         String grpfilePath = this.groupJsonLoc;
 

@@ -52,30 +52,6 @@ public class JsonWriter implements SaveData {
 
     }
 
-//    public void groupJsonWriter(GroupController grpMan) throws IOException {
-//
-//        String grpfilePath = this.groupJsonLoc;
-//
-//        int totalGroups = grpMan.getGroups().size();
-//        Group[] groupArray = new Group[totalGroups];
-//
-//        ArrayList<Group> groups = new ArrayList<>(grpMan.getGroups().values());
-//        for (int i = 0; i < totalGroups; i++) {
-//            groupArray[i] = groups.get(i);
-//        }
-//
-//        ObjectMapper mapper = new ObjectMapper();
-//        mapper.registerSubtypes(new NamedType(Student.class, "Student"));
-//        mapper.registerSubtypes(new NamedType(Group.class, "Group"));
-//        mapper.findAndRegisterModules();
-//
-//        ObjectWriter mapwriter = mapper.writer(new DefaultPrettyPrinter());
-//
-//        FileWriter groupJson = new FileWriter(grpfilePath);
-//        mapwriter.writeValue(groupJson, groupArray);
-//
-//    }
-
     public void groupStudentJsonWriter(GroupController grpMan) throws IOException {
 
         String grpfilePath = this.groupJsonLoc;
@@ -84,18 +60,6 @@ public class JsonWriter implements SaveData {
 //        HashMap[] groupArray = new HashMap[totalGroups];
         HashMap<String, ArrayList<String>> groupHash = new HashMap<>();
 
-//        ArrayList<Group> groups = new ArrayList<>(grpMan.getGroups().values());
-//        for (int i = 0; i < totalGroups; i++) {
-//            if (groups.get(i) instanceof Group) {
-//                ArrayList<String> students = new ArrayList<>();
-//                for (Person student: groups.get(i).getMembers()) {
-//                    if (student instanceof Student) {
-//                        students.add(((Student) student).getUsername());
-//                    }
-//                }
-//                groupHash.put(groups.get(i).getGroupName(), students);
-//            }
-//        }
         for (Group grp: grpMan.getGroups().values()) {
             groupHash.put(grp.getGroupName(), grp.getDirectStudentsString());
         }
