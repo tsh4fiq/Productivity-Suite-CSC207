@@ -69,13 +69,15 @@ public class ViewGroups implements GUI {
         this.noGroups.setBounds(600, 600, 200, 200 );
 
         for (ArrayList<Object> temp : groups) {
-            String s = (String) temp.get(1);
-            String s1 = String.format("View Group: %s", s);
-            JButton button = new JButton(s1);
-            button.addActionListener(this);
-            String groupID = (String) temp.get(2);
-            this.frame.add(button);
-            this.mappings.put(button, groupID);
+            if (! temp.isEmpty()) {
+                String s = (String) temp.get(1);
+                String s1 = String.format("View Group: %s", s);
+                JButton button = new JButton(s1);
+                button.addActionListener(this);
+                String groupID = (String) temp.get(2);
+                this.frame.add(button);
+                this.mappings.put(button, groupID);
+            }
         }
         if (groups.isEmpty()) {
             this.frame.add(this.noGroups);
