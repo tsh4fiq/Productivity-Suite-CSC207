@@ -1,15 +1,18 @@
+import events.CalendarEvent;
+import events.EventFactory;
+import events.OneOffEvent;
 import org.junit.*;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class EventCreatorTest {
-    EventCreator e;
+public class EventFactoryTest {
+    EventFactory e;
 
     @Before
     public void setUp() {
-        e = new EventCreator();
+        e = new EventFactory();
     }
 
     @Test(timeout = 50)
