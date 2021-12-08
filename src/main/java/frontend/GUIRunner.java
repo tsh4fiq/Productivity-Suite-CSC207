@@ -23,31 +23,7 @@ public class GUIRunner {
         CalendarController calendarController = new CalendarController(studentController);
 
         JsonReader jsonReader = new JsonReader();
-
-        try {
-            if (jsonReader.savedInfoStudents()) {
-                for (Student student : jsonReader.readStudentJson()) {
-                    studentController.addStudent(student);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            if (jsonReader.savedInfoGroups()) {
-                HashMap<String, ArrayList<String>> groupHash = jsonReader.readGroupJsonSimplified();
-                for (Map.Entry<String, ArrayList<String>> entry: groupHash.entrySet()) {
-                    ArrayList<Person>  students = new ArrayList<>();
-                    for (String username: entry.getValue()) {
-                        students.add(studentController.getAllStudents().get(username));
-                    }
-                    groupController.createGroup(students, entry.getKey());
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        jsonReader.loadData(studentController, groupController);
 
         new StartMenu(login, groupController, calendarController, studentController);
 

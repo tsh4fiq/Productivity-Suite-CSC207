@@ -42,11 +42,11 @@ public class GroupManager {
         return newGroup;
     }
 
-    public boolean addToGroup(Person student, String GroupID) {
+    public boolean addToGroup(Person member, String GroupID) {
 
         if ((this.groupMap).containsKey(GroupID)) {
 
-            this.groupMap.get(GroupID).getMembers().add(student);
+            this.groupMap.get(GroupID).getMembers().add(member);
 
             return true;
 
@@ -59,12 +59,12 @@ public class GroupManager {
 
     }
 
-    public boolean removeGroupMember(Person student, String GroupID) {
+    public boolean removeGroupMember(Person member , String GroupID) {
 
         if ((this.groupMap).containsKey(GroupID)) {
 
-            if (this.groupMap.get(GroupID).getMembers().contains(student)) {
-                this.groupMap.get(GroupID).getMembers().remove(student);
+            if (this.groupMap.get(GroupID).getMembers().contains(member)) {
+                this.groupMap.get(GroupID).getMembers().remove(member);
                 return true;
             }
             return false;

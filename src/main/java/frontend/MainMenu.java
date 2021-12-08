@@ -160,16 +160,7 @@ public class MainMenu implements GUI {
 
         } else if (e.getSource() == this.returnButton) {
             JsonWriter jsonWriter = new JsonWriter();
-            try {
-                jsonWriter.studentJsonWriter(studentController);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-            try {
-                jsonWriter.groupJsonWriterSimplified(groupController);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
+            jsonWriter.saveData(this.studentController, this.groupController);
             this.frame.dispose();
             StartMenu startMenu = new StartMenu(this.loginController, this.groupController,
                     this.calendarController, this.studentController);
