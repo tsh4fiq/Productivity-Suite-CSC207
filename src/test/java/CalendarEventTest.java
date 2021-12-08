@@ -17,6 +17,11 @@ public class CalendarEventTest {
     }
 
     @Test(timeout = 50)
+    public void TestGetName() {
+        assertEquals("Lecture", event.getName());
+    }
+
+    @Test(timeout = 50)
     public void TestCompareTo() {
         CalendarEvent tut = new CalendarEvent("Tutorial", 2.0f, 5.0f, "Wednesday");
         assertEquals(1, event.compareTo(tut));
@@ -37,9 +42,19 @@ public class CalendarEventTest {
     }
 
     @Test(timeout = 50)
-    public void TestName() {
+    public void TestSetName() {
+        assertEquals("Lecture", event.getName());
         event.setName("Sleep");
         assertEquals("Sleep", event.getName());
     }
+
+    @Test(timeout = 50)
+    public void TestSetDayorDate() {
+        assertEquals("Tuesday", event.getDayOrDate());
+        event.setDayOrDate("Monday");
+        assertEquals("Monday", event.getDayOrDate());
+    }
+
+
 
 }
