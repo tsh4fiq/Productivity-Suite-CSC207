@@ -65,7 +65,7 @@ class FreeTimeCalculatorTest {
         studentManager.addStudent(tom);
         studentManager.addStudent(tam);
         studentManager.addStudent(tem);
-        groupManager.CreateGroup(students, "222");
+        groupManager.createGroup(students, "222");
     }
 
     private ArrayList<CalendarEvent> eventsTem(EventFactory eventCreator) {
