@@ -48,6 +48,50 @@ public class Group implements Person, Serializable {
         return students;
     }
 
+    public ArrayList<Student> getDirectStudentsInGroup() {
+        // By direct students we mean students that are not a part of any subgroups
+        ArrayList<Student> directStudents = new ArrayList<>();
+        for (Person member: this.members) {
+            if (member instanceof Student) {
+                directStudents.add((Student) member);
+            }
+        }
+        return directStudents;
+    }
+
+    public ArrayList<String> getDirectStudentsString() {
+        ArrayList<Student> directStudents = getDirectStudentsInGroup();
+        ArrayList<String> directStudentsString = new ArrayList<>();
+
+        for (Student student: directStudents) {
+            directStudentsString.add(student.getUsername());
+        }
+        return directStudentsString;
+    }
+
+    public ArrayList<Group> getDirectSubGroupsInGroup() {
+        // By direct subgroups we mean subgroups that are directly under the group, so further nested subgroups do not
+        // count
+        ArrayList<Group> directSubGroups = new ArrayList<>();
+        for (Person member: this.members) {
+            if (member instanceof Group) {
+                directSubGroups.add((Group) member);
+            }
+        }
+        return directSubGroups;
+    }
+
+    public ArrayList<String> getDirectSubGroupsString() {
+        ArrayList<Group> directGroups = getDirectSubGroupsInGroup();
+        ArrayList<String> directGroupsString = new ArrayList<>();
+
+        for (Group group: directGroups) {
+            directGroupsString.add(group.getGroupName());
+        }
+        return directGroupsString;
+
+    }
+
     public ArrayList<String> getStudentsUsername() {
 
         ArrayList<String> list = new ArrayList<>();

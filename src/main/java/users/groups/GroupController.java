@@ -23,13 +23,13 @@ public class GroupController {
     }
 
 
-    public boolean addToGroup(Student member, String groupID){
+    public boolean addToGroup(Person member, String groupID){
 
         return (this.manager).addToGroup(member, groupID);
 
     }
 
-    public boolean removeMember(Student member, String groupID){
+    public boolean removeMember(Person member, String groupID){
 
         return (this.manager).removeGroupMember(member, groupID);
 
