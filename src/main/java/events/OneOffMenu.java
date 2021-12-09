@@ -186,6 +186,7 @@ public class OneOffMenu implements GUIEventMenu {
             try {
                 this.calendarController.addOneOffEvent(this.studentUsername, events);
             } catch (VarExceptions ex) {
+                JOptionPane.showMessageDialog(null, "Error: you added an overlapping Event");
                 ex.printStackTrace();
             }
 

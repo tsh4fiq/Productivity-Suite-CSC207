@@ -181,6 +181,7 @@ public class MainMenu implements GUI {
                     ex.printStackTrace();
                 } catch (VarExceptions varExceptions) {
                     varExceptions.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error: Overlapping Events Found");
                 }
                 JOptionPane.showMessageDialog(null, "File Succesfully Uploaded");
             }
@@ -272,53 +273,7 @@ public class MainMenu implements GUI {
                                 Float.parseFloat(arrOfStr[1]), Float.parseFloat(formattedEnd), str));
                     }
                 }
-                /*
-                System.out.println("Event Name: ");
-                System.out.println(nameEvent);
 
-
-                DtStart startDate = ((VEvent) i).getStartDate();
-
-//                System.out.println(startDate.getDate());
-//                System.out.println("start date value");
-//                System.out.println(startDate.getValue());
-//                System.out.println("get time");
-//                System.out.println(startDate.getDate().getTime());
-                Date endDate = ((VEvent) i).getEndDate().getDate();
-
-               // System.out.println(endDate);
-
-
-                long time = startDate.getDate().getTime();
-                GregorianCalendar personalCalendar =  new GregorianCalendar();
-
-                System.out.println("long Time:");
-                System.out.println(time);
-                Date date = new Date(time);
-                DateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                format.setTimeZone(TimeZone.getTimeZone("EST"));
-                String formatted = format.format(date);
-
-
-                // -------------------------------------------
-
-                System.out.println("Formatted:");
-                ZonedDateTime dateTime = Instant.ofEpochMilli(time)
-                        .atZone(ZoneId.of("Canada/Central"));
-                String formatted = dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-                System.out.println(formatted);
-
-                // -------------------------------------------
-
-
-                personalCalendar.setTime(date);
-                personalCalendar.setTimeZone(TimeZone.getTimeZone("EST"));
-
-                System.out.println("Day of Week: ");
-                System.out.println(personalCalendar.get(GregorianCalendar.DAY_OF_WEEK));
-
-
-                */
             }
 
 
