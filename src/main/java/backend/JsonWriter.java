@@ -79,21 +79,8 @@ public class JsonWriter implements SaveData {
         String subgrpfilePath = this.subGroupJsonLoc;
 
         int totalGroups = grpMan.getGroups().size();
-//        HashMap[] groupArray = new HashMap[totalGroups];
         HashMap<String, ArrayList<String>> subGroupHash = new HashMap<>();
 
-//        ArrayList<Group> groups = new ArrayList<>(grpMan.getGroups().values());
-//        for (int i = 0; i < totalGroups; i++) {
-//            if (groups.get(i) instanceof Group) {
-//                ArrayList<String> subGroups = new ArrayList<>();
-//                for (Person subGroup: groups.get(i).getMembers()) {
-//                    if (subGroup instanceof Group) {
-//                        subGroups.add(((Group) subGroup).getGroupName());
-//                    }
-//                }
-//                groupHash.put(groups.get(i).getGroupName(), subGroups);
-//            }
-//        }
         for (Group grp: grpMan.getGroups().values()) {
             subGroupHash.put(grp.getgID(), grp.getDirectSubGroupsString());
         }
