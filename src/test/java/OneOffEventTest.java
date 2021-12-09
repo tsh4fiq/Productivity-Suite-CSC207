@@ -17,7 +17,7 @@ public class OneOffEventTest {
     }
 
     @Test(timeout = 50)
-    public void TestCompareTo() {
+    public void TestEarlier() {
         OneOffEvent tut = new OneOffEvent("Tutorial", 2.0f, 5.0f, 12.12f);
         assertEquals(-1, event.compareTo(tut));
     }
@@ -40,6 +40,26 @@ public class OneOffEventTest {
     public void TestName() {
         event.setName("Sleep");
         assertEquals("Sleep", event.getName());
+    }
+
+    @Test(timeout = 50)
+    public void TestLater() {
+        OneOffEvent e2 = new OneOffEvent("Competition", 10.0f, 13.0f, 12.03f);
+        assertEquals(1, event.compareTo(e2));
+    }
+
+    @Test(timeout = 50)
+    public void TestSetDate() {
+        event.setDayOrDate("6.21");
+        assertEquals("6.21", event.getDayOrDate());
+    }
+
+    @Test(timeout = 50)
+    public void TestDuration() {
+        assertEquals(1.0f, event.getDuration(), 0);
+        event.setStartTime(10.0f);
+        event.setEndTime(12.0f);
+        assertEquals(2,0f, event.getDuration());
     }
 
 }
