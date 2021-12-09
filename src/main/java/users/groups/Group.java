@@ -86,7 +86,7 @@ public class Group implements Person, Serializable {
         ArrayList<String> directGroupsString = new ArrayList<>();
 
         for (Group group: directGroups) {
-            directGroupsString.add(group.getGroupName());
+            directGroupsString.add(group.getgID());
         }
         return directGroupsString;
 
@@ -112,7 +112,7 @@ public class Group implements Person, Serializable {
     }
 
     public String getGroupName() {
-        return name;
+        return this.name;
     }
 
     public void setGroupName(String name) {
