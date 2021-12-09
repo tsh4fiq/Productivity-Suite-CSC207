@@ -1,6 +1,7 @@
 package events;
 
 import calendar.CalendarController;
+import constants.VarExceptions;
 import frontend.MainMenu;
 import login.LogIn;
 import users.groups.GroupController;
@@ -163,7 +164,11 @@ public class RecurringMenu implements GUIEventMenu {
             ArrayList<CalendarEvent> events = new ArrayList<>();
             events.add(this.calendarController.createRecEvent(this.eventName, this.startHour + (this.startMinute / 100),
                     this.endHour + (this.endMinute/100), this.day));
-            this.calendarController.addRecEvent(this.studentUsername, events);
+            try {
+                this.calendarController.addRecEvent(this.studentUsername, events);
+            } catch (VarExceptions ex) {
+                ex.printStackTrace();
+            }
         }
 
     }
