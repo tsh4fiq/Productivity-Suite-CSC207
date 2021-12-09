@@ -16,11 +16,7 @@ public class LogIn {
     }
 
     public boolean checkUsername(String userName) {
-
-        boolean usernameInUsermap;
-
-        usernameInUsermap = userMap.containsKey(userName);
-        return usernameInUsermap;
+        return userMap.containsKey(userName);
     }
 
     public boolean validateLogIn(String userName, String password) {

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Tajwaar/IdeaProjects/course-project-variable-v2/src/main/java</OriginalElement>
+  <nodes>
+    <node x="1396.75" y="81.0">users.groups.JoinGroup</node>
+    <node x="1619.0" y="395.0">backend.TaskList</node>
+    <node x="83.75" y="81.0">events.GUIEventMenu</node>
+    <node x="1535.75" y="81.0">users.groups.ViewGroups</node>
+    <node x="394.75" y="81.0">users.groups.CreateGroupPopUp</node>
+    <node x="1858.75" y="81.0">users.groups.CreateGroup</node>
+    <node x="348.0" y="319.0">users.students.Student</node>
+    <node x="471.0" y="319.0">users.groups.Group</node>
+    <node x="0.0" y="162.0">events.RecurringMenu</node>
+    <node x="1463.0" y="395.0">calendar.Calendar</node>
+    <node x="790.0" y="395.0">backend.JsonReader</node>
+    <node x="1100.75" y="81.0">users.groups.GroupMenu</node>
+    <node x="996.0" y="238.0">calendar.FreeTimeCalculator</node>
+    <node x="1672.75" y="162.0">calendar.FreeCalendarFrame</node>
+    <node x="172.0" y="162.0">events.OneOffMenu</node>
+    <node x="0.0" y="319.0">events.OneOffEvent</node>
+    <node x="1130.0" y="395.0">frontend.GUIRunner</node>
+    <node x="962.0" y="395.0">constants.Exceptions</node>
+    <node x="609.0" y="319.0">calendar.FreeMonthPanel</node>
+    <node x="813.0" y="319.0">calendar.FreeViewDay</node>
+    <node x="1443.0" y="238.0">calendar.CalendarManager</node>
+    <node x="156.0" y="319.0">events.CalendarEvent</node>
+    <node x="1767.0" y="395.0">login.LogIn</node>
+    <node x="1658.0" y="238.0">users.students.StudentController</node>
+    <node x="1297.0" y="395.0">backend.JsonWriter</node>
+    <node x="595.75" y="81.0">users.groups.ViewIndividualGroup</node>
+    <node x="252.75" y="81.0">frontend.MainMenu</node>
+    <node x="805.75" y="81.0">login.SignupMenu</node>
+    <node x="75.75" y="238.0">events.EventInterface</node>
+    <node x="827.0" y="238.0">calendar.ViewDay</node>
+    <node x="411.0" y="395.0">users.groups.GroupManager</node>
+    <node x="1221.0" y="238.0">calendar.CalendarController</node>
+    <node x="1686.75" y="81.0">calendar.CalendarFrame</node>
+    <node x="410.5" y="238.0">users.Person</node>
+    <node x="636.1714285714286" y="0.0">frontend.GUI</node>
+    <node x="0.0" y="395.0">users.students.StudentManager</node>
+    <node x="1250.75" y="81.0">login.LoginMenu</node>
+    <node x="608.0" y="395.0">events.EventCreator</node>
+    <node x="960.75" y="81.0">frontend.StartMenu</node>
+    <node x="623.0" y="238.0">calendar.MonthPanel</node>
+    <node x="207.0" y="395.0">users.groups.GroupController</node>
+    <node x="1901.0" y="395.0">backend.Task</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="users.groups.JoinGroup" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1456.25" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="users.groups.CreateGroupPopUp" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="485.25" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="users.groups.ViewGroups" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1601.25" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="calendar.FreeViewDay" target="calendar.ViewDay" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="events.RecurringMenu" target="events.GUIEventMenu" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="76.0" y="137.0" />
+      <point x="158.25" y="137.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="calendar.FreeMonthPanel" target="calendar.MonthPanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="login.LoginMenu" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1313.75" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="users.groups.GroupMenu" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="calendar.FreeCalendarFrame" target="calendar.CalendarFrame" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="events.OneOffEvent" target="events.EventInterface" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="68.0" y="294.0" />
+      <point x="148.75" y="294.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="frontend.StartMenu" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1020.75" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="events.OneOffMenu" target="events.GUIEventMenu" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="240.5" y="137.0" />
+      <point x="158.25" y="137.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="events.GUIEventMenu" target="frontend.GUI" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="158.25" y="51.0" />
+      <point x="655.1714285714286" y="51.0" />
+      <point x="-19.0" y="15.5" />
+    </edge>
+    <edge source="calendar.CalendarFrame" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1762.75" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="login.SignupMenu" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="873.25" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="users.groups.ViewIndividualGroup" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="690.75" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="users.groups.CreateGroup" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="1926.75" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="frontend.MainMenu" target="frontend.GUI" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="313.75" y="61.0" />
+      <point x="1165.75" y="61.0" />
+      <point x="1165.75" y="51.0" />
+      <point x="693.1714285714286" y="51.0" />
+      <point x="19.0" y="15.5" />
+    </edge>
+    <edge source="users.groups.Group" target="users.Person" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="517.5" y="294.0" />
+      <point x="458.5" y="294.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="users.students.Student" target="users.Person" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="399.5" y="294.0" />
+      <point x="458.5" y="294.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="events.CalendarEvent" target="events.EventInterface" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="229.5" y="294.0" />
+      <point x="148.75" y="294.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7553349875930521" showDependencies="false" x="997.5000000000001" y="213.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
