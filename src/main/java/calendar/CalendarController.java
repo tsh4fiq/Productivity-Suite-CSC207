@@ -9,6 +9,7 @@ import users.students.Student;
 import users.students.StudentController;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 public class CalendarController {
@@ -30,9 +31,13 @@ public class CalendarController {
 
     public void addOneOffEvent(String student, ArrayList<OneOffEvent> events) throws VarExceptions {
         for (OneOffEvent e: events) {
+            ArrayList<OneOffEvent> list = new ArrayList<OneOffEvent>();
+            list.add(e);
             checkAvailableOneoff(this.getStudent(student), e);
+            calendarManager.addSingleEvents(this.getStudent(student), list);
+
         }
-        calendarManager.addSingleEvents(this.getStudent(student), events);
+
     }
 
     public CalendarEvent createRecEvent(String name, float start, float end, String day) {
@@ -54,16 +59,17 @@ public class CalendarController {
         float newStartTime = recurringEvent.getStartTime();
         float newEndTime = recurringEvent.getEndTime();
         for (CalendarEvent event: events) {
-            checkAvailableLoop(newStartTime, event.getStartTime(), event.getEndTime(), event);
+            checkAvailableLoop(newStartTime, newEndTime, event);
         }
     }
 
-    private void checkAvailableLoop(float newStartTime, float startTime, float endTime, EventInterface event)
+    private void checkAvailableLoop(float newStartTime, float newEndTime, EventInterface event)
             throws VarExceptions {
         float eStartTime = event.getStartTime();
         float eEndTime = event.getEndTime();
-        if ((eStartTime < newStartTime && newStartTime < eEndTime) || (eStartTime < newStartTime &&
-                newStartTime > eEndTime) || (eStartTime > newStartTime && newStartTime < eEndTime)) {
+        if ((eStartTime < newStartTime && newEndTime < eEndTime) || (eStartTime < newStartTime &&
+                newEndTime > eEndTime) || (eStartTime > newStartTime && newEndTime < eEndTime) ||
+                (eStartTime == newStartTime && newEndTime == eEndTime)) {
             throw new VarExceptions("Event exists at time");
         }
     }
@@ -71,12 +77,18 @@ public class CalendarController {
     public void checkAvailableOneoff(Student student, OneOffEvent oneOffEvent) throws VarExceptions {
         String day = oneOffEvent.getDayOrDate();
         float date = Float.parseFloat(day);
+
+
+
         if (student.getStudentSchedule().getSingle().containsKey(date)) {
             ArrayList<OneOffEvent> events = student.getStudentSchedule().getSingle().get(date);
             float newStartTime = oneOffEvent.getStartTime();
             float newEndTime = oneOffEvent.getEndTime();
+
+
+
             for (OneOffEvent event: events) {
-                checkAvailableLoop(newStartTime, event.getStartTime(), event.getEndTime(), event);
+                checkAvailableLoop(newStartTime, newEndTime, event);
             }
         }
     }

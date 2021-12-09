@@ -178,7 +178,9 @@ public class MonthPanel extends JPanel implements ActionListener {
 
         for(int i = 0; i < this.buttons.size(); i++) {
             if (e.getSource() == this.buttons.get(i)) {
-                int day = i +  1;
+                int day = i + 1;
+
+
                 Float date = (float) this.month + 1 + (float)(day) / 100;
                 GregorianCalendar calendar = new GregorianCalendar(this.year, this.month, day);
                 int week = calendar.get(Calendar.DAY_OF_WEEK);

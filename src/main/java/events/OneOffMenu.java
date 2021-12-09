@@ -151,7 +151,7 @@ public class OneOffMenu implements GUIEventMenu {
      * @param e
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)  {
         if(e.getSource() == this.returnButton){
             this.frame.dispose();
             MainMenu mainMenu = new MainMenu(this.loginController, this.groupController,
@@ -186,7 +186,9 @@ public class OneOffMenu implements GUIEventMenu {
             try {
                 this.calendarController.addOneOffEvent(this.studentUsername, events);
             } catch (VarExceptions ex) {
-                ex.printStackTrace();
+
+                JOptionPane.showMessageDialog(null, "Error: you added an overlapping Event");
+
             }
 
         }
