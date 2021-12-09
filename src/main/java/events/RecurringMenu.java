@@ -167,7 +167,6 @@ public class RecurringMenu implements GUIEventMenu {
             try {
                 this.calendarController.addRecEvent(this.studentUsername, events);
             } catch (VarExceptions ex) {
-                ex.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Overlapping Event Added");
             }
         }
